@@ -8,6 +8,14 @@ Event Emitter implementation.
 [![Latest Stable Version](https://img.shields.io/github/tag/webino/event-emitter.svg?label=STABLE&style=for-the-badge)](https://packagist.org/packages/webino/event-emitter)
 
 
+## Setup
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/webino/event-emitter.svg?style=for-the-badge)](https://php.net "Required PHP version")
+
+```bash
+composer require webino\event-emitter
+```
+
+
 ## Quick Use
 
 Emitting an event:
@@ -73,13 +81,6 @@ $event = $emitter->emit('example', function ($result) {
     // or continue
     return true;
 });
-```
-
-## Setup
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/webino/event-emitter.svg?style=for-the-badge)](https://php.net "Required PHP version")
-
-```bash
-composer require webino\event-emitter
 ```
 
 
