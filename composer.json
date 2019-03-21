@@ -1,0 +1,54 @@
+{
+  "name": "webino/event-emitter",
+  "description": "Event Emitter implementation.",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Peter Bacinsky",
+      "email": "peter@bacinsky.sk"
+    }
+  ],
+  "require": {
+    "php": "~7.1",
+    "webino/exceptions": "1.*"
+  },
+  "require-dev": {
+    "tracy/tracy": "2.*",
+    "nette/tester": "1.*",
+    "phpstan/phpstan": "0.*",
+    "squizlabs/php_codesniffer": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Webino\\": [
+        "src"
+      ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Webino\\": [
+        "tests/src"
+      ]
+    }
+  },
+  "scripts": {
+    "check": "vendor/bin/phpcs --extensions=php,phpt",
+    "fix": "vendor/bin/phpcbf --extensions=php,phpt",
+    "analyse": "vendor/bin/phpstan analyse src --level max",
+    "test": "vendor/bin/tester -c tests/php.ini -d auto_prepend_file=$PWD/tests/bootstrap.php -l tests/log/test.log --coverage tests/log/clover.xml --coverage-src src",
+    "build": [
+      "@check",
+      "@analyse",
+      "@composer test tests"
+    ]
+  },
+  "scripts-descriptions": {
+    "check": "Coding style check.",
+    "fix": "Coding style fix.",
+    "analyse": "Static analysis.",
+    "test": "Run tests.",
+    "build": "Automated build."
+  }
+}
