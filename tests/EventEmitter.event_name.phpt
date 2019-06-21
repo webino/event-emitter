@@ -32,4 +32,5 @@ $results = $event->getResults();
 
 Assert::true($emitted);
 Assert::same('FooBar', (string) $results);
-Assert::same('Foo', $results[0]);
+Assert::same('Foo', $results->first());
+Assert::same('Bar', $results->last());

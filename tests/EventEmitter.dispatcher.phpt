@@ -38,4 +38,5 @@ $results = $event->getResults();
 
 Assert::false(empty($event['emitted']));
 Assert::same('FooBar', (string) $results);
-Assert::same('Foo', $results[0]);
+Assert::same('Foo', $results->first());
+Assert::same('Bar', $results->last());

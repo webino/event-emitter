@@ -23,4 +23,18 @@ interface EventResultsInterface extends \ArrayAccess
      * @return void
      */
     public function add($response): void;
+
+    /**
+     * Returns first response
+     *
+     * @return mixed|null
+     */
+    public function first();
+
+    /**
+     * Returns last response
+     *
+     * @return mixed|null
+     */
+    public function last();
 }

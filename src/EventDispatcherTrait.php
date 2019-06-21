@@ -118,7 +118,7 @@ trait EventDispatcherTrait
         isset($this->events[$name][(int)$priority]) or $this->events[$name][(int)$priority] = [];
         isset($this->events[$name][(int)$priority][0]) or $this->events[$name][(int)$priority][0] = [];
 
-        array_unshift($this->events[$name][(int)$priority][0], $callback);
+        $this->events[$name][(int)$priority][0][] = $callback;
     }
 
     /**

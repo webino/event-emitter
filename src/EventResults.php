@@ -33,14 +33,35 @@ class EventResults implements
     }
 
     /**
-     * Add new response on top of others
+     * Add new response
      *
      * @param mixed $response Event response value
      * @return void
      */
     public function add($response): void
     {
-        array_unshift($this->results, $response);
+        $this->results[] = $response;
+    }
+
+    /**
+     * Returns first response
+     *
+     * @return mixed|null
+     */
+    public function first()
+    {
+        return $this->results[0] ?: null;
+    }
+
+    /**
+     * Returns last response
+     *
+     * @return mixed|null
+     */
+    public function last()
+    {
+        $index = count($this->results) - 1;
+        return $this->results[$index] ?: null;
     }
 
     /**
