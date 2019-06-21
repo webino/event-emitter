@@ -236,6 +236,16 @@ echo $results;
   Detach event emitter from handler.
 
 
+## Architecture
+
+![event lifecycle](https://raw.githubusercontent.com/webino/event-emitter/develop/docs/EventEmitter.notify.diagram.png "EventEmitter notifies EventDispatcher")
+
+
+### Event Lifecycle
+
+![event lifecycle](https://raw.githubusercontent.com/webino/event-emitter/develop/docs/EventEmitter.Event.Lifecycle.diagram.png "Event lifecycle")
+
+
 ## Development
 
 [![Build Status](https://img.shields.io/travis/webino/event-emitter/develop.svg?style=for-the-badge)](http://travis-ci.org/webino/event-emitter "Develop Build Status")
