@@ -24,14 +24,13 @@ trait EventEmitterTrait
     /**
      * Returns event dispatcher.
      *
-     * @return EventDispatcherInterface|null
+     * @return EventDispatcherInterface
      */
     public function getEventDispatcher(): EventDispatcherInterface
     {
         if (!$this->eventDispatcher) {
-            $this->setEventDispatcher(new EventDispatcher);
+            $this->eventDispatcher = new EventDispatcher;
         }
-
         return $this->eventDispatcher;
     }
 
