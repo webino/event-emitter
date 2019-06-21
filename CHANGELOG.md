@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.0 [UNRELEASED]
+## 1.1.0
 
 - Added global dispatcher support
 
