@@ -17,10 +17,24 @@ namespace Webino;
 interface EventResultsInterface extends \ArrayAccess
 {
     /**
-     * Add new response on top of others
+     * Add new response.
      *
      * @param mixed $response Event response value
      * @return void
      */
     public function add($response): void;
+
+    /**
+     * Returns first response.
+     *
+     * @return mixed|null
+     */
+    public function first();
+
+    /**
+     * Returns last response.
+     *
+     * @return mixed|null
+     */
+    public function last();
 }

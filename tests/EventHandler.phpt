@@ -11,21 +11,36 @@
 use Tester\Assert;
 use Webino\Event;
 use Webino\EventEmitter;
+use Webino\EventHandlerInterface;
+use Webino\EventHandlerTrait;
 
 Tester\Environment::setup();
 
+
+class TestEventHandler implements EventHandlerInterface
+{
+    use EventHandlerTrait;
+
+    protected function initEvents(): void
+    {
+        $this->on('test', function (Event $event) {
+            $event['emitted'] = true;
+            return 'Foo';
+        });
+
+        $this->on('test', function () {
+            return 'Bar';
+        });
+    }
+}
+
+
 $emitter = new EventEmitter;
+$handler = new TestEventHandler;
 $event = new Event('test');
 
 
-$emitter->on($event, function (Event $event) {
-    $event['emitted'] = true;
-    return 'Foo';
-});
-
-$emitter->on($event, function () {
-    return 'Bar';
-});
+$emitter->on($handler);
 
 $emitter->emit($event);
 $results = $event->getResults();

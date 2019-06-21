@@ -17,18 +17,18 @@ namespace Webino;
 interface EventHandlerInterface
 {
     /**
-     * Attach event emitter to handler
+     * Attach event emitter to handler.
      *
-     * @param EventEmitterInterface $emitter Event emitter
+     * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */
-    public function attachEventEmitter(EventEmitterInterface $emitter): void;
+    public function attachEventEmitter(EventDispatcherInterface $emitter): void;
 
     /**
-     * Detach event emitter from handler
+     * Detach event emitter from handler.
      *
-     * @param EventEmitterInterface $emitter Event emitter
+     * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */
-    public function detachEventEmitter(EventEmitterInterface $emitter): void;
+    public function detachEventEmitter(EventDispatcherInterface $emitter): void;
 }

@@ -17,44 +17,44 @@ namespace Webino;
 interface EventInterface extends \ArrayAccess
 {
     /**
-     * The beginning of the event
+     * The beginning of the event.
      */
     const BEGIN = 9000;
 
     /**
-     * Before main event
+     * Before main event.
      */
     const BEFORE = 5000;
 
     /**
-     * Main event
+     * Main event.
      */
     const MAIN = 1;
 
     /**
-     * After main event
+     * After main event.
      */
     const AFTER = -5000;
 
     /**
-     * At the end of the event
+     * At the end of the event.
      */
     const FINISH = -9000;
 
     /**
-     * Event priority offset
+     * Event priority offset.
      */
     const OFFSET = 10;
 
     /**
-     * Get event name
+     * Get event name.
      *
      * @return string Event name
      */
     public function getName(): string;
 
     /**
-     * Set the event name
+     * Set event name.
      *
      * @param string $name Event name
      * @return void
@@ -62,14 +62,14 @@ interface EventInterface extends \ArrayAccess
     public function setName(string $name): void;
 
     /**
-     * Get target object from which event was emitted
+     * Get target object from which event was emitted.
      *
      * @return EventEmitterInterface Event target object
      */
     public function getTarget(): EventEmitterInterface;
 
     /**
-     * Set the event target object
+     * Set the event target object.
      *
      * @param EventEmitterInterface $target Event target object
      * @return void
@@ -77,7 +77,7 @@ interface EventInterface extends \ArrayAccess
     public function setTarget(EventEmitterInterface $target): void;
 
     /**
-     * Get event value by name
+     * Get event value by name.
      *
      * If the event value does not exist, the default value will be returned.
      *
@@ -88,21 +88,21 @@ interface EventInterface extends \ArrayAccess
     public function getValue(string $name, $default = null);
 
     /**
-     * Set event values
+     * Set event values.
      *
      * @param iterable $values
      */
     public function setValues(iterable $values): void;
 
     /**
-     * Return event results
+     * Returns event results.
      *
      * @return EventResults Event results
      */
     public function getResults(): EventResults;
 
     /**
-     * Set event results
+     * Set event results.
      *
      * Overwrites results.
      *
@@ -112,7 +112,7 @@ interface EventInterface extends \ArrayAccess
     public function setResults($results): void;
 
     /**
-     * Set event result value
+     * Set event result value.
      *
      * Add new result value on top of existing results.
      *
@@ -122,7 +122,7 @@ interface EventInterface extends \ArrayAccess
     public function setResult($result): void;
 
     /**
-     * Indicate whether or not to stop this event
+     * Indicate whether or not to stop this event.
      *
      * @param bool $stop Set true to stop event
      * @return void
@@ -130,7 +130,7 @@ interface EventInterface extends \ArrayAccess
     public function stop(bool $stop = true): void;
 
     /**
-     * Has this event indicated event should stop?
+     * Indicates should stop.
      *
      * @return bool True when event is stopped
      */

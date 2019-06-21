@@ -11,19 +11,24 @@
 use Tester\Assert;
 use Webino\Event;
 use Webino\EventEmitter;
+use Webino\EventDispatcher;
 
 Tester\Environment::setup();
 
+$dispatcher = new EventDispatcher;
+
 $emitter = new EventEmitter;
+$emitter->setEventDispatcher($dispatcher);
+
 $event = new Event('test');
 
 
-$emitter->on($event, function (Event $event) {
+$dispatcher->on($event, function (Event $event) {
     $event['emitted'] = true;
     return 'Foo';
 });
 
-$emitter->on($event, function () {
+$dispatcher->on($event, function () {
     return 'Bar';
 });
 

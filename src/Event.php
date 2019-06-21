@@ -19,7 +19,7 @@ class Event extends \ArrayObject implements EventInterface
     use EventTrait;
 
     /**
-     * Create new event from string or other event object
+     * Create new event from string or other event object.
      *
      * @param string|self|null $event Event name or object
      * @param EventEmitterInterface|null $target Event target object

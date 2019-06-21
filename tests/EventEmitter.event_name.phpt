@@ -14,22 +14,23 @@ use Webino\EventEmitter;
 Tester\Environment::setup();
 
 $emitted = false;
-$eventEmitter = new EventEmitter;
+$emitter = new EventEmitter;
 
 
-$eventEmitter->on('test', function () use (&$emitted) {
+$emitter->on('test', function () use (&$emitted) {
     $emitted = true;
     return 'Foo';
 });
 
-$eventEmitter->on('test', function () {
+$emitter->on('test', function () {
     return 'Bar';
 });
 
-$event = $eventEmitter->emit('test');
+$event = $emitter->emit('test');
 $results = $event->getResults();
 
 
 Assert::true($emitted);
 Assert::same('FooBar', (string) $results);
-Assert::same('Foo', $results[0]);
+Assert::same('Foo', $results->first());
+Assert::same('Bar', $results->last());

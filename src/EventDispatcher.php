@@ -11,15 +11,10 @@
 namespace Webino;
 
 /**
- * Interface EventDispatcherInterface
+ * Class EventDispatcher
  * @package event-emitter
  */
-interface EventEmitterInterface extends EventDispatcherInterface
+class EventDispatcher implements EventDispatcherInterface
 {
-    /**
-     * Inject event dispatcher.
-     *
-     * @param EventDispatcherInterface $dispatcher
-     */
-    public function setEventDispatcher(EventDispatcherInterface $dispatcher): void;
+    use EventDispatcherTrait;
 }

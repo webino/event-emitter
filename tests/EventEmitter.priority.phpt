@@ -17,21 +17,31 @@ Tester\Environment::setup();
 $emitter = new EventEmitter;
 $event = new Event('test');
 
-
 $emitter->on($event, function (Event $event) {
     $event['emitted'] = true;
-    return 'Foo';
-});
+    return 'Main';
+}, $event::MAIN);
 
 $emitter->on($event, function () {
-    return 'Bar';
-});
+    return 'Finish';
+}, $event::FINISH);
+
+$emitter->on($event, function () {
+    return 'Begin';
+}, $event::BEGIN);
+
+$emitter->on($event, function () {
+    return 'After';
+}, $event::AFTER);
+
+$emitter->on($event, function () {
+    return 'Before';
+}, $event::BEFORE);
 
 $emitter->emit($event);
 $results = $event->getResults();
 
-
 Assert::false(empty($event['emitted']));
-Assert::same('FooBar', (string) $results);
-Assert::same('Foo', $results->first());
-Assert::same('Bar', $results->last());
+Assert::same('BeginBeforeMainAfterFinish', (string) $results);
+Assert::same('Begin', $results->first());
+Assert::same('Finish', $results->last());
