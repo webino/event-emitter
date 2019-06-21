@@ -190,6 +190,9 @@ echo $results;
 - *mixed* getValue(*string* $name, *mixed* $default = null) <br>
   Get event value by name.
   
+- *void* setValues(*iterable* $values) <br>
+  Set event values.
+  
 - *EventResults* getResults() <br>
   Returns event results.
   
