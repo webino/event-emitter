@@ -14,20 +14,20 @@ use Webino\EventEmitter;
 
 Tester\Environment::setup();
 
-$eventEmitter = new EventEmitter;
+$emitter = new EventEmitter;
 $event = new Event('test');
 
 
-$eventEmitter->on($event, function (Event $event) {
+$emitter->on($event, function (Event $event) {
     $event['emitted'] = true;
     return 'Foo';
 });
 
-$eventEmitter->on($event, function () {
+$emitter->on($event, function () {
     return 'Bar';
 });
 
-$eventEmitter->emit($event);
+$emitter->emit($event);
 $results = $event->getResults();
 
 
