@@ -252,8 +252,8 @@ The event propagation could be stopped at any time.
 ![event lifecycle](https://raw.githubusercontent.com/webino/event-emitter/develop/docs/EventEmitter.Event.Lifecycle.diagram.png "Event lifecycle")
 
 Using events like *someEvent.pre* and *someEvent.post* or *someEvent.before*, *someEvent.after*, it doesn't matter, 
-is messy and not recommended, don't do that. Give an event a unique name then attach handlers using priorities. 
-Convenient way to do that is to use an event [priority constants](#api).
+is messy and not recommended, don't do that. Give an event a unique name then attach handlers, main action including,
+using priorities. Convenient way to do that is to use an event [priority constants](#api).
 
 
 ## Development
