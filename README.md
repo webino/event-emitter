@@ -88,6 +88,77 @@ $event = $emitter->emit('example', function ($result) {
 ```
 
 
+Event handling priority:
+```php
+use Webino\EventEmitter;
+
+$emitter = new EventEmitter;
+
+$emitter->on('example', function () {
+    return 'Begin';
+}, $event::BEGIN);
+
+$emitter->on('example', function () {
+    return 'Before';
+}, $event::BEFORE);
+
+$emitter->on('example', function (Event $event) {
+    return 'Main';
+}, $event::MAIN);
+
+$emitter->on('example', function () {
+    return 'After';
+}, $event::AFTER);
+
+$emitter->on('example', function () {
+    return 'Finish';
+}, $event::FINISH);
+
+// emitting custom event
+$event = $emitter->emit('example');
+
+/** @var \Webino\EventResults $results */
+$results = $event->getResults();
+
+echo $results;
+
+// => BeginBeforeMainAfterFinish
+```
+
+Event handler:
+```php
+use Webino\EventEmitter;
+use Webino\EventHandlerInterface;
+use Webino\EventHandlerTrait;
+
+class ExampleEventHandler implements EventHandlerInterface
+{
+    use EventHandlerTrait;
+
+    protected function initEvents(): void
+    {
+        $this->on('example', function () {
+            return 'Foo';
+        });
+
+        $this->on('example', function () {
+            return 'Bar';
+        });
+    }
+}
+
+// emitting custom event
+$event = $emitter->emit('example');
+
+/** @var \Webino\EventResults $results */
+$results = $event->getResults();
+
+echo $results;
+
+// => FooBar
+```
+
+
 ## Development
 
 [![Build Status](https://img.shields.io/travis/webino/event-emitter/develop.svg?style=for-the-badge)](http://travis-ci.org/webino/event-emitter "Develop Build Status")
