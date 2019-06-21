@@ -193,7 +193,7 @@ echo $results;
 - *EventResults* getResults() <br>
   Returns event results.
   
-- *void* stop(bool $stop = true) <br>
+- *void* stop(*bool* $stop = true) <br>
   Indicate whether or not to stop this event.
   
 - *bool* isStopped() <br>
