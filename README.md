@@ -7,6 +7,10 @@ Event Emitter implementation.
 [![Code Quality](https://img.shields.io/scrutinizer/g/webino/event-emitter/master.svg?style=for-the-badge)](https://scrutinizer-ci.com/g/webino/event-emitter/?branch=master "Master Code Quality")
 [![Latest Stable Version](https://img.shields.io/github/tag/webino/event-emitter.svg?label=STABLE&style=for-the-badge)](https://packagist.org/packages/webino/event-emitter)
 
+## Recommended Usage
+
+Use event emitter to decouple routine algorithm from extended logic. 
+
 
 ## Setup
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/webino/event-emitter.svg?style=for-the-badge)](https://php.net "Required PHP version")
