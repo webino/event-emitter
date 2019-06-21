@@ -24,7 +24,7 @@ trait EventEmitterTrait
     /**
      * Returns event dispatcher.
      *
-     * @return EventDispatcherInterface
+     * @return EventDispatcherInterface|null
      */
     public function getEventDispatcher(): EventDispatcherInterface
     {
