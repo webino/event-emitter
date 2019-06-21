@@ -245,14 +245,14 @@ It is possible to have a global dispatcher to attach event handlers to.
 
 ### Event Lifecycle
 
-The basic idea around events is that we just trigger an event and every action happens in listeners, 
+The basic idea around events is that we just trigger an event and every action happens in handlers, 
 even the main action. Then we can listen to that event using priorities, if we want to act like a middleware. 
 The event propagation could be stopped at any time.
 
 ![event lifecycle](https://raw.githubusercontent.com/webino/event-emitter/develop/docs/EventEmitter.Event.Lifecycle.diagram.png "Event lifecycle")
 
 Using events like *someEvent.pre* and *someEvent.post* or *someEvent.before*, *someEvent.after*, it doesn't matter, 
-is messy and not recommended, don't do that. Give an event a unique name then attach listeners using priorities. 
+is messy and not recommended, don't do that. Give an event a unique name then attach handlers using priorities. 
 Convenient way to do that is to use an event [priority constants](#api).
 
 
