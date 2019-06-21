@@ -9,7 +9,7 @@ Event Emitter implementation.
 
 ## Recommended Usage
 
-Use event emitter to decouple routine algorithm from extended logic. 
+Use event emitter to decouple routine algorithm from an extended logic. 
 
 
 ## Setup
@@ -157,6 +157,80 @@ echo $results;
 
 // => FooBar
 ```
+
+
+## API
+
+**Event**
+
+- *const* BEGIN <br>
+  The beginning priority of the event.
+
+- *const* BEFORE <br>
+  Priority before main event.
+
+- *const* MAIN <br>
+  Main event priority.
+
+- *const* AFTER <br>
+  Priority after main event.
+
+- *const* FINISH <br>
+  Priority at the end of the event.
+  
+- *const* OFFSET <br>
+  Event priority offset.
+
+- *string* getName() <br>
+  Get event name.
+  
+- *EventEmitterInterface* getTarget() <br>
+  Get target object from which event was emitted.
+  
+- *mixed* getValue(*string* $name, *mixed* $default = null) <br>
+  Get event value by name.
+  
+- *EventResults* getResults() <br>
+  Returns event results.
+  
+- *void* stop(bool $stop = true) <br>
+  Indicate whether or not to stop this event.
+  
+- *bool* isStopped() <br>
+  Indicates should stop.
+
+
+**EventEmitter**
+
+- *void* on( <br>
+  *string|EventInterface|EventHandlerInterface* $event, <br>
+  *string|array<int, string>|callable* $callback = null, <br> 
+  *int* $priority = 1) <br>
+  Set event handler.
+
+- *void* off(*callable|EventHandlerInterface* $callback = null, *string|EventInterface* $event = null) <br>
+  Remove event handler.
+
+- *EventInterface* emit(*string|EventInterface* $event, *callable* $until = null) <br>
+  Invoke handlers.
+
+
+**EventResults**
+
+- *mixed|null* first() <br>
+  Returns first response.
+
+- *mixed|null* last() <br>
+  Returns last response.
+
+
+**EventHandler**
+
+- *void* attachEventEmitter(EventEmitterInterface $emitter) <br>
+  Attach event emitter to handler.
+  
+- *void* detachEventEmitter(EventEmitterInterface $emitter) <br>
+  Detach event emitter from handler.
 
 
 ## Development
