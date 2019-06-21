@@ -17,7 +17,7 @@ namespace Webino;
 trait EventEmitterTrait
 {
     /**
-     * @var EventEmitterInterface
+     * @var EventEmitterInterface|null
      */
     protected $eventDispatcher;
 
