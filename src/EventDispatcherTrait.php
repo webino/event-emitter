@@ -17,7 +17,7 @@ namespace Webino;
 trait EventDispatcherTrait
 {
     /**
-     * Subscribed events and their handlers
+     * Subscribed events and their handlers.
      *
      * STRUCTURE:
      * [
@@ -45,7 +45,7 @@ trait EventDispatcherTrait
     protected $eventPrototype;
 
     /**
-     * Invoke handlers
+     * Invoke handlers.
      *
      * @param string|EventInterface $event Event name or object
      * @param callable|null $until Invoke handlers until callback return value evaluate to true
@@ -97,7 +97,7 @@ trait EventDispatcherTrait
     }
 
     /**
-     * Set event handler
+     * Set event handler.
      *
      * @param string|EventInterface|EventHandlerInterface $event Event name, object or event handler
      * @param callable|null $callback Event handler
@@ -122,7 +122,7 @@ trait EventDispatcherTrait
     }
 
     /**
-     * Remove event handler
+     * Remove event handler.
      *
      * @param callable|EventHandlerInterface|null $callback Event handler
      * @param string|EventInterface|null $event Event name or object
@@ -174,7 +174,7 @@ trait EventDispatcherTrait
     }
 
     /**
-     * Return listeners sort by priority in reverse order
+     * Return listeners sort by priority in reverse order.
      *
      * @param string|null $name Event name
      * @return array Sorted listeners
@@ -200,7 +200,7 @@ trait EventDispatcherTrait
     }
 
     /**
-     * Return event as object, if any
+     * Return event as object, if any.
      *
      * @param string|EventInterface|object $event Event name or object
      * @return EventInterface Event object

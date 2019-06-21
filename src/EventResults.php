@@ -23,7 +23,7 @@ class EventResults implements
     protected $results = [];
 
     /**
-     * Create event Results from array values
+     * Create event Results from array values.
      *
      * @param array $results Event Results values array
      */
@@ -33,7 +33,7 @@ class EventResults implements
     }
 
     /**
-     * Add new response
+     * Add new response.
      *
      * @param mixed $response Event response value
      * @return void
@@ -44,7 +44,7 @@ class EventResults implements
     }
 
     /**
-     * Returns first response
+     * Returns first response.
      *
      * @return mixed|null
      */
@@ -54,7 +54,7 @@ class EventResults implements
     }
 
     /**
-     * Returns last response
+     * Returns last response.
      *
      * @return mixed|null
      */
@@ -65,7 +65,7 @@ class EventResults implements
     }
 
     /**
-     * Return Results as array
+     * Return results as array.
      *
      * @return array
      */
@@ -75,7 +75,7 @@ class EventResults implements
     }
 
     /**
-     * Whether a offset exists
+     * Whether a offset exists.
      *
      * @param mixed $offset
      * @return bool
@@ -86,7 +86,7 @@ class EventResults implements
     }
 
     /**
-     * Offset to retrieve
+     * Offset to retrieve.
      *
      * @param mixed $offset
      * @return mixed
@@ -97,7 +97,7 @@ class EventResults implements
     }
 
     /**
-     * Offset to set
+     * Offset to set.
      *
      * @param mixed $offset
      * @param mixed $value
@@ -108,7 +108,7 @@ class EventResults implements
     }
 
     /**
-     * Offset to unset
+     * Offset to unset.
      *
      * @param mixed $offset
      */

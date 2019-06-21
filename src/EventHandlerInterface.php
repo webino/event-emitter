@@ -17,7 +17,7 @@ namespace Webino;
 interface EventHandlerInterface
 {
     /**
-     * Attach event emitter to handler
+     * Attach event emitter to handler.
      *
      * @param EventEmitterInterface $emitter Event emitter
      * @return void
@@ -25,7 +25,7 @@ interface EventHandlerInterface
     public function attachEventEmitter(EventEmitterInterface $emitter): void;
 
     /**
-     * Detach event emitter from handler
+     * Detach event emitter from handler.
      *
      * @param EventEmitterInterface $emitter Event emitter
      * @return void

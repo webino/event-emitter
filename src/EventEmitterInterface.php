@@ -17,7 +17,7 @@ namespace Webino;
 interface EventEmitterInterface
 {
     /**
-     * Set event handler
+     * Set event handler.
      *
      * @param string|EventInterface|EventHandlerInterface $event Event name, object or event handler
      * @param string|array<int, string>|callable|null $callback Event handler
@@ -27,7 +27,7 @@ interface EventEmitterInterface
     public function on($event, $callback = null, int $priority = 1);
 
     /**
-     * Remove event handler
+     * Remove event handler.
      *
      * @param callable|EventHandlerInterface|null $callback Event handler
      * @param string|EventInterface|null $event Event name or object
@@ -36,7 +36,7 @@ interface EventEmitterInterface
     public function off($callback = null, $event = null): void;
 
     /**
-     * Invoke handlers
+     * Invoke handlers.
      *
      * @param string|EventInterface $event Event name or object
      * @param callable|null $until Invoke handlers until callback return value evaluate to true

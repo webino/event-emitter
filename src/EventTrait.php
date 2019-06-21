@@ -17,7 +17,7 @@ namespace Webino;
 trait EventTrait
 {
     /**
-     * @var string Event name
+     * @var string Event name.
      */
     protected $name;
 
@@ -37,7 +37,7 @@ trait EventTrait
     protected $stop = false;
 
     /**
-     * Get event name
+     * Get event name.
      *
      * @return string Event name
      */
@@ -50,7 +50,7 @@ trait EventTrait
     }
 
     /**
-     * Set the event name
+     * Set event name.
      *
      * @param string $name Event name
      * @return void
@@ -61,7 +61,7 @@ trait EventTrait
     }
 
     /**
-     * Get target object from which event was emitted
+     * Get target object from which event was emitted.
      *
      * @return EventEmitterInterface Event target object
      */
@@ -71,7 +71,7 @@ trait EventTrait
     }
 
     /**
-     * Set the event target object
+     * Set the event target object.
      *
      * @param EventEmitterInterface $target Event target object
      * @return void
@@ -82,7 +82,7 @@ trait EventTrait
     }
 
     /**
-     * Get event value by name
+     * Get event value by name.
      *
      * If the event value does not exist, the default value will be returned.
      *
@@ -96,7 +96,7 @@ trait EventTrait
     }
 
     /**
-     * Set event values
+     * Set event values.
      *
      * @param iterable $values
      */
@@ -108,7 +108,7 @@ trait EventTrait
     }
 
     /**
-     * Set event result value
+     * Set event result value.
      *
      * Add new result value on top of existing results.
      *
@@ -121,7 +121,7 @@ trait EventTrait
     }
 
     /**
-     * Return event results
+     * Returns event results.
      *
      * @return EventResults Event results
      */
@@ -131,7 +131,7 @@ trait EventTrait
     }
 
     /**
-     * Set event results
+     * Set event results.
      *
      * Overwrites results.
      *
@@ -144,7 +144,7 @@ trait EventTrait
     }
 
     /**
-     * Indicate whether or not to stop propagating this event
+     * Indicate whether or not to stop propagating this event.
      *
      * @param bool $stop Set true to stop propagation
      * @return void
@@ -155,7 +155,7 @@ trait EventTrait
     }
 
     /**
-     * Has this event indicated event should stop?
+     * Indicates should stop.
      *
      * @return bool True when event is stopped
      */

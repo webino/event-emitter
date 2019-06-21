@@ -22,7 +22,7 @@ trait EventEmitterTrait
     protected $eventDispatcher;
 
     /**
-     * Returns event dispatcher
+     * Returns event dispatcher.
      *
      * @return EventEmitterInterface
      */
@@ -46,7 +46,7 @@ trait EventEmitterTrait
     }
 
     /**
-     * Invoke handlers
+     * Invoke handlers.
      *
      * @param string|EventInterface $event Event name or object
      * @param callable|null $until Invoke handlers until callback return value evaluate to true
@@ -59,7 +59,7 @@ trait EventEmitterTrait
     }
 
     /**
-     * Set event handler
+     * Set event handler.
      *
      * @param string|EventInterface|EventHandlerInterface $event Event name, object or event handler
      * @param callable|null $callback Event handler
@@ -72,7 +72,7 @@ trait EventEmitterTrait
     }
 
     /**
-     * Remove event handler
+     * Remove event handler.
      *
      * @param callable|EventHandlerInterface|null $callback Event handler
      * @param string|EventInterface|null $event Event name or object

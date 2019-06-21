@@ -27,12 +27,12 @@ trait EventHandlerTrait
     private $handlers = [];
 
     /**
-     * Initialize events
+     * Initialize events.
      */
     abstract protected function initEvents(): void;
 
     /**
-     * Handle an event
+     * Handle an event.
      *
      * @param string|EventInterface $event Event name or object
      * @param string|callable|null $callback Event handler
@@ -47,7 +47,7 @@ trait EventHandlerTrait
     }
 
     /**
-     * Attach event emitter to handler
+     * Attach event emitter to handler.
      *
      * @param EventEmitterInterface $emitter Event emitter
      * @return void
@@ -59,7 +59,7 @@ trait EventHandlerTrait
     }
 
     /**
-     * Detach event emitter from handler
+     * Detach event emitter from handler.
      *
      * @param EventEmitterInterface $emitter Event emitter
      * @return void
