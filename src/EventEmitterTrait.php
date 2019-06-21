@@ -24,7 +24,7 @@ trait EventEmitterTrait
     /**
      * Returns event dispatcher.
      *
-     * @return EventDispatcherInterface|null
+     * @return EventDispatcherInterface
      */
     public function getEventDispatcher(): EventDispatcherInterface
     {
@@ -38,7 +38,7 @@ trait EventEmitterTrait
     /**
      * Inject event dispatcher.
      *
-     * @param EventDispatcherInterface|null $dispatcher
+     * @param EventDispatcherInterface $dispatcher
      */
     public function setEventDispatcher(EventDispatcherInterface $dispatcher): void
     {
