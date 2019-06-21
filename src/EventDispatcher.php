@@ -14,7 +14,7 @@ namespace Webino;
  * Class EventDispatcher
  * @package event-emitter
  */
-class EventDispatcher implements EventEmitterInterface
+class EventDispatcher implements EventDispatcherInterface
 {
     use EventDispatcherTrait;
 }

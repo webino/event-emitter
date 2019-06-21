@@ -106,7 +106,7 @@ trait EventDispatcherTrait
      */
     public function on($event, $callback = null, int $priority = 0)
     {
-        if ($event instanceof EventHandlerInterface && $this instanceof EventEmitterInterface) {
+        if ($event instanceof EventHandlerInterface && $this instanceof EventDispatcherInterface) {
             $event->attachEventEmitter($this);
             return;
         }

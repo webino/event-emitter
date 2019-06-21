@@ -17,7 +17,7 @@ namespace Webino;
 trait EventHandlerTrait
 {
     /**
-     * @var EventEmitterInterface
+     * @var EventDispatcherInterface
      */
     private $emitter;
 
@@ -49,10 +49,10 @@ trait EventHandlerTrait
     /**
      * Attach event emitter to handler.
      *
-     * @param EventEmitterInterface $emitter Event emitter
+     * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */
-    public function attachEventEmitter(EventEmitterInterface $emitter): void
+    public function attachEventEmitter(EventDispatcherInterface $emitter): void
     {
         $this->emitter = $emitter;
         $this->initEvents();
@@ -61,10 +61,10 @@ trait EventHandlerTrait
     /**
      * Detach event emitter from handler.
      *
-     * @param EventEmitterInterface $emitter Event emitter
+     * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */
-    public function detachEventEmitter(EventEmitterInterface $emitter): void
+    public function detachEventEmitter(EventDispatcherInterface $emitter): void
     {
         foreach ($this->handlers as $index => $handler) {
             $emitter->off($handler);

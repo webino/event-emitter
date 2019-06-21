@@ -17,16 +17,16 @@ namespace Webino;
 trait EventEmitterTrait
 {
     /**
-     * @var EventEmitterInterface|null
+     * @var EventDispatcherInterface|null
      */
     protected $eventDispatcher;
 
     /**
      * Returns event dispatcher.
      *
-     * @return EventEmitterInterface
+     * @return EventDispatcherInterface|null
      */
-    public function getEventDispatcher(): EventEmitterInterface
+    public function getEventDispatcher(): EventDispatcherInterface
     {
         if (!$this->eventDispatcher) {
             $this->setEventDispatcher(new EventDispatcher);
@@ -38,11 +38,11 @@ trait EventEmitterTrait
     /**
      * Inject event dispatcher.
      *
-     * @param EventEmitterInterface $eventEmitter
+     * @param EventDispatcherInterface|null $dispatcher
      */
-    public function setEventDispatcher(EventEmitterInterface $eventEmitter): void
+    public function setEventDispatcher(EventDispatcherInterface $dispatcher): void
     {
-        $this->eventDispatcher = $eventEmitter;
+        $this->eventDispatcher = $dispatcher;
     }
 
     /**

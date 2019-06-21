@@ -202,6 +202,9 @@ echo $results;
 
 **EventEmitter**
 
+- *void* setEventDispatcher(EventDispatcherInterface $dispatcher) <br>
+  Inject event dispatcher.
+
 - *void* on( <br>
   *string|EventInterface|EventHandlerInterface* $event, <br>
   *string|array<int, string>|callable* $callback = null, <br> 
@@ -226,10 +229,10 @@ echo $results;
 
 **EventHandler**
 
-- *void* attachEventEmitter(EventEmitterInterface $emitter) <br>
+- *void* attachEventEmitter(EventDispatcherInterface $emitter) <br>
   Attach event emitter to handler.
   
-- *void* detachEventEmitter(EventEmitterInterface $emitter) <br>
+- *void* detachEventEmitter(EventDispatcherInterface $emitter) <br>
   Detach event emitter from handler.
 
 
