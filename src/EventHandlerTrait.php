@@ -49,6 +49,7 @@ trait EventHandlerTrait
     /**
      * Attach event emitter to handler.
      *
+     * @api
      * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */
@@ -61,6 +62,7 @@ trait EventHandlerTrait
     /**
      * Detach event emitter from handler.
      *
+     * @api
      * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */

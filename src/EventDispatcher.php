@@ -13,6 +13,7 @@ namespace Webino;
 /**
  * Class EventDispatcher
  * @package event-emitter
+ * @since 1.1.0
  */
 class EventDispatcher implements EventDispatcherInterface
 {

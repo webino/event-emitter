@@ -19,6 +19,8 @@ interface EventEmitterInterface extends EventDispatcherInterface
     /**
      * Inject event dispatcher.
      *
+     * @api
+     * @since 1.1.0
      * @param EventDispatcherInterface $dispatcher
      */
     public function setEventDispatcher(EventDispatcherInterface $dispatcher): void;

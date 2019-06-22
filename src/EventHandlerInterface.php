@@ -19,6 +19,7 @@ interface EventHandlerInterface
     /**
      * Attach event emitter to handler.
      *
+     * @api
      * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */
@@ -27,6 +28,7 @@ interface EventHandlerInterface
     /**
      * Detach event emitter from handler.
      *
+     * @api
      * @param EventDispatcherInterface $emitter Event emitter
      * @return void
      */

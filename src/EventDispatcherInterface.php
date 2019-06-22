@@ -13,12 +13,14 @@ namespace Webino;
 /**
  * Interface EventDispatcherInterface
  * @package event-emitter
+ * @since 1.1.0
  */
 interface EventDispatcherInterface
 {
     /**
      * Set event handler.
      *
+     * @api
      * @param string|EventInterface|EventHandlerInterface $event Event name, object or event handler
      * @param string|array<int, string>|callable|null $callback Event handler
      * @param int $priority Handler invocation priority
@@ -29,6 +31,7 @@ interface EventDispatcherInterface
     /**
      * Remove event handler.
      *
+     * @api
      * @param callable|EventHandlerInterface|null $callback Event handler
      * @param string|EventInterface|null $event Event name or object
      * @return void
@@ -38,6 +41,7 @@ interface EventDispatcherInterface
     /**
      * Invoke handlers.
      *
+     * @api
      * @param string|EventInterface $event Event name or object
      * @param callable|null $until Invoke handlers until callback return value evaluate to true
      * @return EventInterface Event object

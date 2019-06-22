@@ -39,6 +39,7 @@ trait EventTrait
     /**
      * Get event name.
      *
+     * @api
      * @return string Event name
      */
     public function getName(): string
@@ -63,6 +64,7 @@ trait EventTrait
     /**
      * Get target object from which event was emitted.
      *
+     * @api
      * @return EventEmitterInterface Event target object
      */
     public function getTarget(): EventEmitterInterface
@@ -86,6 +88,7 @@ trait EventTrait
      *
      * If the event value does not exist, the default value will be returned.
      *
+     * @api
      * @param string $name Value name
      * @param mixed $default Default value to return if event value does not exist
      * @return mixed Event value
@@ -98,6 +101,7 @@ trait EventTrait
     /**
      * Set event values.
      *
+     * @api
      * @param iterable $values
      */
     public function setValues(iterable $values): void
@@ -123,6 +127,7 @@ trait EventTrait
     /**
      * Returns event results.
      *
+     * @api
      * @return EventResults Event results
      */
     public function getResults(): EventResults
@@ -146,6 +151,7 @@ trait EventTrait
     /**
      * Indicate whether or not to stop propagating this event.
      *
+     * @api
      * @param bool $stop Set true to stop propagation
      * @return void
      */
@@ -157,6 +163,7 @@ trait EventTrait
     /**
      * Indicates should stop.
      *
+     * @api
      * @return bool True when event is stopped
      */
     public function isStopped(): bool

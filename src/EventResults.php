@@ -35,6 +35,7 @@ class EventResults implements
     /**
      * Add new response.
      *
+     * @internal
      * @param mixed $response Event response value
      * @return void
      */
@@ -46,6 +47,7 @@ class EventResults implements
     /**
      * Returns first response.
      *
+     * @api
      * @return mixed|null
      */
     public function first()
@@ -56,6 +58,7 @@ class EventResults implements
     /**
      * Returns last response.
      *
+     * @api
      * @return mixed|null
      */
     public function last()

@@ -19,6 +19,7 @@ interface EventResultsInterface extends \ArrayAccess
     /**
      * Add new response.
      *
+     * @internal
      * @param mixed $response Event response value
      * @return void
      */
@@ -27,6 +28,7 @@ interface EventResultsInterface extends \ArrayAccess
     /**
      * Returns first response.
      *
+     * @api
      * @return mixed|null
      */
     public function first();
@@ -34,6 +36,7 @@ interface EventResultsInterface extends \ArrayAccess
     /**
      * Returns last response.
      *
+     * @api
      * @return mixed|null
      */
     public function last();

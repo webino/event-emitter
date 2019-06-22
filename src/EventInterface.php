@@ -49,6 +49,7 @@ interface EventInterface extends \ArrayAccess
     /**
      * Get event name.
      *
+     * @api
      * @return string Event name
      */
     public function getName(): string;
@@ -64,6 +65,7 @@ interface EventInterface extends \ArrayAccess
     /**
      * Get target object from which event was emitted.
      *
+     * @api
      * @return EventEmitterInterface Event target object
      */
     public function getTarget(): EventEmitterInterface;
@@ -81,6 +83,7 @@ interface EventInterface extends \ArrayAccess
      *
      * If the event value does not exist, the default value will be returned.
      *
+     * @api
      * @param string $name Value name
      * @param mixed $default Default value to return if event value does not exist
      * @return mixed Event value
@@ -90,6 +93,7 @@ interface EventInterface extends \ArrayAccess
     /**
      * Set event values.
      *
+     * @api
      * @param iterable $values
      */
     public function setValues(iterable $values): void;
@@ -97,6 +101,7 @@ interface EventInterface extends \ArrayAccess
     /**
      * Returns event results.
      *
+     * @api
      * @return EventResults Event results
      */
     public function getResults(): EventResults;
@@ -124,6 +129,7 @@ interface EventInterface extends \ArrayAccess
     /**
      * Indicate whether or not to stop this event.
      *
+     * @api
      * @param bool $stop Set true to stop event
      * @return void
      */
@@ -132,6 +138,7 @@ interface EventInterface extends \ArrayAccess
     /**
      * Indicates should stop.
      *
+     * @api
      * @return bool True when event is stopped
      */
     public function isStopped(): bool;
