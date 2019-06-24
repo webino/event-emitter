@@ -23,8 +23,9 @@ $emitter->setEventDispatcher($dispatcher);
 $event = new Event('test');
 
 
-$dispatcher->on($event, function (Event $event) {
+$dispatcher->on($event, function (Event $event) use ($emitter) {
     $event['emitted'] = true;
+    Assert::same($emitter, $event->getTarget());
     return 'Foo';
 });
 
