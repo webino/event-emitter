@@ -51,10 +51,10 @@ trait EventDispatcherTrait
      * @api
      * @param string|EventInterface $event Event name or object
      * @param callable|null $until Invoke handlers until callback return value evaluate to true
+     * @param EventEmitterInterface|null $target
      * @return EventInterface Event object
-     * @throws InvalidEventException Invalid event
      */
-    public function emit($event, callable $until = null): EventInterface
+    public function emit($event, callable $until = null, EventEmitterInterface $target = null): EventInterface
     {
         $event = $this->normalizeEvent($event);
         $name = $event->getName();
@@ -71,7 +71,9 @@ trait EventDispatcherTrait
         $event->setResults([]);
         $event->stop(false);
 
-        if ($this instanceof EventEmitterInterface) {
+        if ($target) {
+            $event->setTarget($target);
+        } elseif ($this instanceof EventEmitterInterface) {
             $event->setTarget($this);
         }
 

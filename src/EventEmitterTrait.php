@@ -24,7 +24,6 @@ trait EventEmitterTrait
     /**
      * Returns event dispatcher.
      *
-     * @since 1.1.0
      * @return EventDispatcherInterface
      */
     public function getEventDispatcher(): EventDispatcherInterface
@@ -39,7 +38,6 @@ trait EventEmitterTrait
      * Inject event dispatcher.
      *
      * @api
-     * @since 1.1.0
      * @param EventDispatcherInterface $dispatcher
      */
     public function setEventDispatcher(EventDispatcherInterface $dispatcher): void
@@ -53,12 +51,12 @@ trait EventEmitterTrait
      * @api
      * @param string|EventInterface $event Event name or object
      * @param callable|null $until Invoke handlers until callback return value evaluate to true
+     * @param EventEmitterInterface|null $target
      * @return EventInterface Event object
-     * @throws InvalidEventException Invalid event
      */
-    public function emit($event, callable $until = null): EventInterface
+    public function emit($event, callable $until = null, EventEmitterInterface $target = null): EventInterface
     {
-        return $this->getEventDispatcher()->emit($event, $until);
+        return $this->getEventDispatcher()->emit($event, $until, $this);
     }
 
     /**

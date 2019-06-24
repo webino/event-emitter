@@ -44,7 +44,8 @@ interface EventDispatcherInterface
      * @api
      * @param string|EventInterface $event Event name or object
      * @param callable|null $until Invoke handlers until callback return value evaluate to true
+     * @param EventEmitterInterface|null $target
      * @return EventInterface Event object
      */
-    public function emit($event, callable $until = null): EventInterface;
+    public function emit($event, callable $until = null, EventEmitterInterface $target = null): EventInterface;
 }
