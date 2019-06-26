@@ -8,11 +8,12 @@
  * @license     BSD-3-Clause
  */
 
-use Tester\Assert;
-use Webino\Event;
-use Webino\EventEmitter;
+namespace Webino;
 
-Tester\Environment::setup();
+use Tester\Assert;
+use Tester\Environment;
+
+Environment::setup();
 
 $emitter = new EventEmitter;
 $event = new Event('test');

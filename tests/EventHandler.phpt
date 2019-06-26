@@ -8,13 +8,12 @@
  * @license     BSD-3-Clause
  */
 
-use Tester\Assert;
-use Webino\Event;
-use Webino\EventEmitter;
-use Webino\EventHandlerInterface;
-use Webino\EventHandlerTrait;
+namespace Webino;
 
-Tester\Environment::setup();
+use Tester\Assert;
+use Tester\Environment;
+
+Environment::setup();
 
 
 class TestEventHandler implements EventHandlerInterface
