@@ -56,7 +56,7 @@ trait EventEmitterTrait
      */
     public function emit($event, callable $until = null, EventEmitterInterface $target = null): EventInterface
     {
-        return $this->getEventDispatcher()->emit($event, $until, $this);
+        return $this->getEventDispatcher()->emit($event, $until, $target ?: $this);
     }
 
     /**
